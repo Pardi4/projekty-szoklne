@@ -1,0 +1,176 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav {
+  width: 100%;
+  height: 70px;
+  background-color: #222;
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  box-shadow: 0px 1px 10px black;
+  font-weight: 600;
+}
+nav .logo {
+  padding-left: 30px;
+  flex-basis: 50%;
+  transition: 0.3s;
+}
+@media (hover: hover) {
+  nav .logo:hover {
+    color: #add8e6;
+  }
+}
+@media (hover: none) {
+  nav .logo:active {
+    color: #add8e6;
+  }
+}
+nav .menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-basis: 50%;
+  font-size: 1rem;
+}
+nav .menu a {
+  position: relative;
+  transition: 0.5s;
+}
+nav .menu a:hover {
+  color: #add8e6;
+  text-shadow: 1px 1px 1px #add8e6;
+}
+@media (hover: hover) {
+  nav .menu a::after, nav .menu a::before {
+    content: "";
+    width: 120%;
+    height: 4px;
+    background: white;
+    position: absolute;
+    z-index: 3;
+    transform: scaleX(0);
+    transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    left: -10%;
+  }
+  nav .menu a::before {
+    top: -3px;
+    transform-origin: left;
+  }
+  nav .menu a::after {
+    bottom: -3px;
+    transform-origin: right;
+  }
+  nav .menu a:hover::after, nav .menu a:hover::before {
+    transform: scaleX(1);
+    background-color: #add8e6;
+  }
+  nav .menu a #a-header2::before {
+    top: -3px;
+    transform-origin: center;
+  }
+  nav .menu a #a-header2::after {
+    bottom: -3px;
+    transform-origin: center;
+  }
+  nav .menu a #a-header3::before {
+    top: -3px;
+    transform-origin: right;
+  }
+  nav .menu a #a-header3::after {
+    bottom: -3px;
+    transform-origin: left;
+  }
+}
+@media (hover: none) {
+  nav .menu a:active {
+    color: #add8e6;
+    text-shadow: 1px 1px 1px #add8e6;
+  }
+}
+@media (min-width: 1024px) {
+  nav {
+    font-size: 2.2rem;
+  }
+  nav .menu {
+    font-size: 1.5rem;
+  }
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+html, body {
+  scroll-behavior: smooth;
+  font-family: "Roboto", "sans-serif";
+}
+
+body {
+  height: 200vh;
+  scroll-behavior: smooth;
+  background-color: #333;
+}
+
+/*# sourceMappingURL=style.css.map */

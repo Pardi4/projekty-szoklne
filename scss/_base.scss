@@ -1,0 +1,14 @@
+@use 'variables' as *;
+
+*, *::after,*::before{
+    box-sizing: border-box;
+}
+html,body {
+    scroll-behavior: smooth;
+    font-family: 'Roboto', 'sans-serif';
+}
+body{
+    height: 200vh;
+    scroll-behavior: smooth;
+    background-color: #333;
+}

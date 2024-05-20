@@ -1,0 +1,124 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+nav {
+    width: 100%;
+    height: 70px;
+    background-color: $header_bg;
+    color: $header_font;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    box-shadow: 0px 1px 10px black;
+    font-weight: 600;
+
+    .logo {
+        padding-left: 30px;
+        flex-basis: 50%;
+        transition: .3s;
+        @include hover{
+            &:hover{
+                color: $header_text_hover;
+            }
+        }
+        @include nohover{
+            &:active{
+                color: $header_text_hover;
+            }
+        }
+    }
+
+    .menu {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-basis: 50%;
+        font-size: 1rem;
+
+        a {
+            position: relative;
+            transition: .5s;
+
+            &:hover {
+                color: $header_text_hover;
+                text-shadow: 1px 1px 1px $header_text_hover;
+            }
+
+            @include hover {
+
+                &::after,
+                &::before {
+                    content: '';
+                    width: 120%;
+                    height: 4px;
+                    background: white;
+                    position: absolute;
+                    z-index: 3;
+                    transform: scaleX(0);
+                    transition: .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                    left: -10%;
+                }
+
+                &::before {
+                    top: -3px;
+                    transform-origin: left;
+
+                }
+
+                &::after {
+                    bottom: -3px;
+                    transform-origin: right;
+                }
+
+                &:hover::after,
+                &:hover::before {
+                    transform: scaleX(1);
+                    background-color: $header_text_hover;
+                }
+
+
+                #a-header2 {
+                    &::before {
+                        top: -3px;
+                        transform-origin: center;
+
+                    }
+
+                    &::after {
+                        bottom: -3px;
+                        transform-origin: center;
+                    }
+                }
+
+                #a-header3 {
+                    &::before {
+                        top: -3px;
+                        transform-origin: right;
+
+                    }
+
+                    &::after {
+                        bottom: -3px;
+                        transform-origin: left;
+                    }
+                }
+            }
+            @include nohover{
+                &:active{
+                    color: $header_text_hover;
+                    text-shadow: 1px 1px 1px $header_text_hover;
+                }
+            }
+        }
+    }
+    @include lg{
+        font-size: 2.2rem;
+        .menu{
+            font-size: 1.5rem;
+        }
+    }
+}

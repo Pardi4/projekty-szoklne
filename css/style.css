@@ -180,7 +180,7 @@ header .header-box {
   -webkit-backdrop-filter: blur(10px);
   border-radius: 15px;
   border: 1px solid rgba(0, 0, 0, 0.104);
-  padding: 30px;
+  padding: 50px 30px;
   max-width: 70%;
 }
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -197,6 +197,20 @@ header span {
   font-weight: 900;
   font-size: 1.7rem;
 }
+header span span {
+  color: red;
+  font-size: 2.2rem;
+}
+@media (min-width: 1024px) {
+  header span span {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 1024px) {
+  header span {
+    font-size: 2.5rem;
+  }
+}
 header h1 {
   height: fit-content;
   display: flex;
@@ -206,6 +220,7 @@ header h1 {
   align-items: center;
   font-size: 1.3rem;
   font-weight: 900;
+  padding: 15px;
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   header h1 {
@@ -223,21 +238,26 @@ header a {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 0;
+  font-weight: 700;
   border-radius: 5px;
   background: red;
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  header a {
-    margin-top: 10px;
-  }
+  transition: 0.5s;
 }
 @media (min-width: 1024px) {
   header a {
-    margin-top: 10px;
     width: 250px;
     height: 40px;
   }
+}
+@media (hover: hover) {
+  header a:hover {
+    background-color: rgb(207, 9, 9);
+    font-size: 1.2rem;
+  }
+}
+header a:active {
+  transition: 0.1s;
+  background-color: rgb(163, 7, 7);
 }
 
 *, *::after, *::before {
